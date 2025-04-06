@@ -1,5 +1,4 @@
 from colorama import Fore, Style
-import re
 
 def input_error(func):
     def inner(*args, **kwargs):

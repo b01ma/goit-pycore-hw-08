@@ -1,10 +1,6 @@
 from colorama import Fore, Back, Style
 from scripts import contacts
-
-def parse_input(user_input):
-    cmd, *args = user_input.split()
-    cmd = cmd.strip().lower()
-    return cmd, *args
+from scripts.helpers import parse_input
 
 def main():
     '''
@@ -40,6 +36,8 @@ def main():
             print(Fore.GREEN + 'Hello! I am your assistant, how can I help you?' + Style.RESET_ALL)
         elif cmd == 'add':
             contacts.add(*args)
+        elif cmd == 'remove':
+            contacts.remove(*args)
         elif cmd == 'change':
             contacts.change(*args)
         elif cmd == 'phone':
@@ -54,7 +52,6 @@ def main():
             contacts.birthdays()
         else:
             print(Fore.YELLOW + 'Unknown command. Please try again.')
-    
-        
+         
 if __name__ == '__main__':
     main()
